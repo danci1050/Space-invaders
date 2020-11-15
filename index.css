@@ -80,6 +80,7 @@ html {
 }
 .bg-spacinvaer-navbar-semitransparent{
   background-color: rgba(0,0,0,0.9) ;
+  
 }
 
 /* change nav bar  */
@@ -369,3 +370,9 @@ display: table;
 #div2 { background: url('https://i.pinimg.com/originals/65/3e/27/653e2765b3e7cb25de9968e8fae841f9.jpg'); width: 50%; height: 50%; float: left;}
 #div3 { background: url('https://cdn.vox-cdn.com/thumbor/A9Dfzkt84fgefEQpJQOqRWUnsJ8=/0x213:570x593/1200x800/filters:focal(0x213:570x593)/cdn.vox-cdn.com/assets/954593/themillions-20.jpeg'); width: 50%; height: 50%; float: left;}
 #div4 { background: url('legacy/l9cut.jpg'); width: 50%; height: 50%; float: left;}
+
+.development{
+  background-image: url(https://3.bp.blogspot.com/_flYJTi1O_TE/TR-7BPBt75I/AAAAAAAAM0U/jgzwgV6yv20/s1600/class-hex.png);
+  background-size: cover;
+  background-repeat:
+}
