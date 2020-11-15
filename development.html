@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Space Invaders</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+<script src="https://apps.elfsight.com/p/platform.js" defer></script>
+
+
+
+
+
+
+  <script>
+    $(window).on("load", function() {
+      $(".loader-wrapper").fadeOut("slow");
+    });
+
+
+    $(document).ready(function() {
+      var height = $(window).height();
+
+      document.addEventListener('scroll', function(event) {
+        var scroll = $('main').scrollTop();
+
+        if (scroll >= height) {
+
+          $(".navbar").removeClass("bg-spacinvaer-navbar-semitransparent");
+          $(".navbar").addClass("bg-spacinvaders-navber-blue");
+
+
+        } else {
+          $(".navbar").removeClass("bg-spacinvaders-navber-blue");
+          $(".navbar").addClass("");
+        }
+        if (event.target.id === 'idOfUl') { // or any other filtering condition
+          console.log('scrolling', event.target);
+
+        }
+      }, true /*Capture event*/ );
+
+    });
+  </script>
+
+
+
+
+</head>
+
+
+
+
+<body>
+
+  <div class="loader-wrapper">
+    <img class="loader-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Space_invaders_logo.svg/1024px-Space_invaders_logo.svg.png" alt="">
+  </div>
+
+
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark ">
+    <a class="navbar-brand invaders-font text-white" href="#">'</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item">
+          <a class="nav-link spacefont" href="Gameplay.html">Gameplay </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link spacefont" href="development.html">Development</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link spacefont" href="SalesAndPorts.html">Sales and Ports</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link spacefont" href="legacy.html">Legacy</a>
+        </li>
+
+      </ul>
+
+      <button class="btn btn-outline-light spacefont" type="submit">Play the game</button>
+
+    </div>
+  </nav>
+
+
+  <main class="scroll-container">
+    <section style="background: rgba(0,0,0,0)">
+
+
+      <div class="video-background" >
+    <div class="video-foreground">
+      <iframe src="https://www.youtube.com/embed/IRhOrTB1mrc?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&mute=1&loop=1&playlist=IRhOrTB1mrc"   allowfullscreen></iframe>
+    </div>
+  </div>
+
+
+        <div class="container h-100">
+          <div class="row h-100 justify-content-center align-items-center">
+            <img class="img-fluid" src="salesandportslogo.png" alt="" >
+          </div>
+        </div>
+    </section>
+
+    <section class="longersection">
+
+
+
+
+
+
+      <div class="container h-100">
+      <div class="row h-100 align-items-center">
+        <div class="col-sm-5 d-flex justify-content-center">
+        <img src="https://i.guim.co.uk/img/media/882bfe85a77a429fedca731668eb8e47ad751189/0_0_2121_3182/master/2121.jpg?width=700&quality=85&auto=format&fit=max&s=7dc44a0e0b8800b09da9fcd3dc65e73b" alt="" class="img-fluid">
+        </div>
+      <div class="col-sm-7 ">
+
+
+        <p>Space Invaders was created by Japanese designer Tomohiro Nishikado, who spent a year designing the game and developing the necessary hardware to produce it. The game's inspiration is reported to have come from varying sources, including an adaptation of the mechanical game Space Monsters released by Taito in 1972, and a dream about Japanese school children who are waiting for Santa Claus when they are attacked by invading aliens. Nishikado himself has cited Atari's arcade game Breakout as his inspiration. He aimed to create a shooting game that featured the same sense of achievement from completing stages and destroying targets, but with more complex graphics. The game uses a similar layout to that of Breakout but has altered game mechanics. Rather than bounce a ball to attack static objects, players are given the ability to fire projectiles at moving enemies.</p>
+  <p>
+        Early enemy designs for the game included tanks, combat planes, and battleships. Nishikado, however, was not satisfied with the enemy movements; technical limitations made it difficult to simulate flying. Humans would have been easier to simulate, but the designer considered shooting them immoral. After the release of the 1974 anime Space Battleship Yamato in Japan, and seeing a magazine feature about Star Wars, he thought of using a space theme. Nishikado drew inspiration for the aliens from a novel by H. G. Wells, The War of the Worlds, and created initial bitmap images after the octopus-like aliens. Other alien designs were modeled after squids and crabs. The game was originally titled Space Monsters after a popular song in Japan at the time, "Monster", but was changed to Space Invaders by the designer's superiors.</p>
+      </div>
+
+      </div>
+      </div>
+
+
+
+
+  </section>
+
+<section class="longersection">
+  <div class="container h-100">
+  <div class="row h-100 align-items-center">
+
+    <div class="col-sm-12 d-flex justify-content-center">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/KL_Intel_i8080_Black_Background.jpg" alt="" class="img-fluid mb-4 mt-5" style="max-height:40vh;" >
+    </div>
+
+  <div class="col-12 ">
+
+    <h4>Hardwere limitaions</h4>
+    <p>Because microcomputers in Japan were not powerful enough at the time to perform the complex tasks involved in designing and programming Space Invaders, Nishikado had to design his own custom hardware and development tools for the game. He created the arcade board using the latest microprocessors from the United States. The game uses an Intel 8080 central processing unit (CPU), displays raster graphics on a CRT monitor using a bitmapped framebuffer, and uses monaural sound hosted by a combination of analog circuitry and a Texas Instruments SN76477 sound chip. </p>
+    <p>The adoption of a microprocessor was inspired by Gun Fight (1975), Midway's microprocessor adaptation of Nishikado's earlier discrete logic game Western Gun, after the designer was impressed by the improved graphics and smoother animation of Midway's version. Space Invaders also adopted the multi-chip barrel shifter circuit first developed by Midway for Gun Fight, which had been a key part of that game's smoother animation. This circuit allowed the 8080 CPU to shift pictures in the graphics framebuffer faster than it could using only its own native instructions.
+    </p>
+    <p>Despite the specially developed hardware, Nishikado was unable to program the game as he wanted—the Control Program board was not powerful enough to display the graphics in color or move the enemies faster—and he ended up considering the development of the game's hardware the most difficult part of the whole process. While programming the game, Nishikado discovered that the processor was able to render each frame of the alien's animation graphics faster when there were fewer aliens on the screen. Since the alien's positions updated after each frame, this caused the aliens to move across the screen at an increasing speed as more and more were destroyed. Rather than design in compensation for the speed increase, he decided to keep it as a challenging gameplay mechanism.</p>
+  </div>
+
+  </div>
+  </div>
+</section>
+<section>
+
+
+        <div class="container h-100">
+
+        <div class="row h-100 align-items-center">
+
+        <div class="col-sm-7 ">
+
+<h4 class="text-lg-right">The release  of the game</h4>
+        <p>Taito released Space Invaders in July 1978 in both an upright arcade cabinet and a so-called "cocktail-table" cabinet; following its usual practice, Taito named the cocktail version T.T. Space Invaders ("T.T." for "table-top"). Midway released its upright version a few months later and its cocktail version several months after that. The cabinet artwork featured large humanoid monsters not present in the game; Nishikado attributes this to the artist basing the designs on the original title of "Space Monsters", rather than referring to the actual in-game graphics. </p>
+          <p>In the upright cabinets, the game graphics are generated on a hidden CRT monitor and reflected toward the player using a semi-transparent mirror, behind which is mounted a plastic cutout of a moon bolted against a painted starry background. The backdrop is visible through the mirror and thus appears "behind" the graphics. Both Taito's and Midway's first Space Invaders versions had black-and-white graphics with a transparent colored overlay using strips of orange and green cellophane over certain portions of the screen to add color to the image. Later Japanese releases used a rainbow-colored cellophane overlay, and these were eventually followed by versions with a color monitor and an electronically-generated color overlay.
+
+</p>
+        </div>
+        <div class="col-sm-5 d-flex justify-content-center d-none d-lg-block">
+        <img src="https://www.digitiser2000.com/uploads/4/0/6/6/40667199/published/cta.jpg?1519117348" alt="" class="img-fluid">
+
+
+
+        </div>
+
+        </div>
+
+
+        </div>
+
+
+
+</section>
+<section class="longersection">
+
+  <div class="container h-100 ">
+  <div class="row h-100 align-items-center ">
+
+    <div class="col-sm-12  ">
+<h4 class="text-lg-center">Music</h4>
+<p>The game's signature looping four-note bassline as heard during gameplay.
+Problems playing this file? See media help.
+Despite its simplicity, the music to Space Invaders was revolutionary for the gaming industry of the time. Video game scholar Andrew Schartmann identifies three aspects of the music that had a significant impact on the development of game music:</p>
+<ul>
+
+
+<li>Whereas video game music prior to Space Invaders was restricted to the extremities (i.e., a short introductory theme with game-over counterpart), the alien-inspired hit featured continuous music—the well-known four-note loop—throughout, uninterrupted by sound effects: "It was thus the first time that sound effects and music were superimposed to form a rich sonic landscape. Not only do players receive feedback related directly to their actions through sound effects; they also receive stimulus in a more subtle, non-interactive fashion through music."</li>
+<li>The music interacts with on-screen animation to influence the emotions of the player: "That seemingly pedestrian four-note loop might stir us in the most primitive of ways, but that it stirs us at all is worthy of note. By demonstrating that game sound could be more than a simple tune to fill the silence, Space Invaders moved video game music closer to the realm of art."</li>
+<li>The music for Space Invaders popularized the notion of variability—the idea that music can change in accordance with the ongoing on-screen narrative. The variable in Space Invaders, the tempo, is admittedly simple, but its implications are not to be underestimated. "Over the years, analogous strategies of variation would be applied to pitch, rhythm, dynamics, form, and a host of other parameters, all with the goal of accommodating the nonlinear aspect of video games."</li></ul>
+<p>
+At the deepest of conceptual levels, one would be hard-pressed to find an arcade game as influential to the early history of video game music as Space Invaders. Its role as a harbinger of the fundamental techniques that would come to shape the industry remains more or less unchallenged. And its blockbuster success ensured the adoption of those innovations by the industry at large.</p>
+<p>
+— Andrew Schartmann, Maestro Mario: How Nintendo Transformed Videogame Music into an Art, Thought Catalog (2013)
+Next Generation editor Neil West also cited the Space Invaders music as an example of great video game art, commenting on how the simple melody's increasing tempo and synchronization with the enemies' movement chills and excites the player.</p>
+
+</div>
+</div>
+
+
+</div>
+</section>
+
+  </main>
+</body>
+
+</html>

@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>space Invaders Wiki</title>
+  <!-- linking css file -->
+  <link rel="stylesheet" href="othercss.css">
+  <!-- importing bootsrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <!-- setting fav icon -->
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <!-- importing font awsome -->
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <!-- importing jquery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous">
+    < script src = "https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity = "sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin = "anonymous" >
+  </script>
+    <!-- importing bootsrap js-->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </script>
+  <!-- imposrting chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+<body>
+  <!--navbar that stays fixed ven when scrolling -->
+  <nav class="navbar fixed-top navbar-expand-lg">
+    <a class="navbar-brand invaders-font text-white" href="#">'</a>
+    <a class="navbar-brand text-success" href="html.html">Space Invader</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon navbtn"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link text-success" href="Development.html">Development</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-success" href="SalesAndPorts.html">Sales and ports <span class="sr-only">(current)</span></a>
+        </li>
+        <!--Dropdown for multiple option of legacy-->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-success" href="Legacy.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Effect
+          </a>
+          <div class="dropdown-menu dropdwn" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item text-success droptxt" href="Legacy.html#legacy">legacy</a>
+            <a class="dropdown-item text-success droptxt" href="Legacy.html#influence">Influence</a>
+            <a class="dropdown-item text-success droptxt" href="Legacy.html#ranking">Rankings</a>
+            <a class="dropdown-item text-success droptxt" href="Legacy.html#remake">Remakes and sequels</a>
+            <a class="dropdown-item text-success droptxt" href="Legacy.html#popularculture">In popular culture</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+
+
+
+
+
+
+
+<!-- welcome screen's contaienr -->
+  <main class="scroll-container">
+    <section class="salesandports">
+      <!-- makes background darker -->
+      <div class="blackoverlay">
+
+
+        <div class="container h-100">
+          <div class="row h-100 justify-content-center align-items-center">
+            <!-- displays logo -->
+            <img class="img-responsive" src="salesandportslogo.png" alt="" style="width:40vw">
+          </div>
+        </div>
+      </div>
+    </section>
+<!--  -->
+    <section >
+      <div class="container h-100 container-fluid flex-container">
+
+
+
+
+<!-- creates chart with the help of chart.js -->
+        <div class="row w-100  inner-element d-flex flex-wrap align-items-center">
+          <div class="col-md-5 ">
+            <canvas id="myChart" width="400" height="400"></canvas>
+            <script>
+              var ctx = document.getElementById('myChart').getContext('2d');
+              var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                  labels: ['Asteorids', 'Donkey Kong', 'Mortal Kombat II', 'Street Fighter II', 'Space Invaders', 'Pac-Man'],
+                  datasets: [{
+                    label: ' units sold',
+                    data: [100000, 132000, 27000, 200000, 360000, 400000],
+                    backgroundColor: [
+                      'rgba(255, 99, 132, 0.2)',
+                      'rgba(54, 162, 235, 0.2)',
+                      'rgba(255, 206, 86, 0.2)',
+                      'rgba(75, 192, 192, 0.2)',
+                      'rgba(153, 102, 255, 0.2)',
+                      'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                      'rgba(255, 99, 132, 1)',
+                      'rgba(54, 162, 235, 1)',
+                      'rgba(255, 206, 86, 1)',
+                      'rgba(75, 192, 192, 1)',
+                      'rgba(153, 102, 255, 1)',
+                      'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                  }]
+                },
+                options: {
+                  legend: {
+                    display: false
+                  },
+                  title: {
+                    display: true,
+                    text: 'Units sold for the most popluar arcade games'
+                  },
+                  maintainAspectRatio: false,
+                  responsive: true,
+                  scales: {
+                    yAxes: [{
+                      ticks: {
+                        beginAtZero: true
+                      }
+                    }]
+                  }
+                }
+              });
+            </script>
+
+
+
+
+          </div>
+          <div class="col-md-7 ">
+            <div class="row d-none d-md-block d-md-block">
+              <div class="col-md-12 pl-5">
+                <img src="https://cdnb.artstation.com/p/assets/images/images/031/135/397/large/eneko-alava-3.jpg?1602701132 " class="mb-3 img-fluid" alt=""  >
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 pl-5">
+
+                <h4>Sales in units</h4>
+
+                <p>In the first few months following its release in Japan, Space Invaders became popular. Specialty arcades opened with nothing but Space Invaders cabinets, and by the end of 1978 Taito had installed over 100,000 machines and
+                  grossed over US$600 million in Japan alone.By 1980, Taito had sold over 300,000 Space Invaders arcade machines in Japan, and 60,000 machines in the United States within one year, where prices ranged from $2000 to $3000 for each
+                  machine.</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+      </div>
+
+    </section>
+    <section style="background:black;">
+
+
+      <div class="container h-100  container-fluid flex-container" style="overflow:hidden;">
+        <div class="row">
+
+        </div>
+
+
+
+<!-- crates chart with the help of chart.js -->
+        <div class="row w-100 inner-element">
+          <div class="col-md-5 ">
+
+            <canvas id="myChart1" width="400" height="400"></canvas>
+            <script>
+              var ctx = document.getElementById('myChart1').getContext('2d');
+              var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                  labels: ['Asteorids', 'Donkey Kong', 'Mortal Kombat II', 'Street Fighter II', 'Space Invaders', 'Pac-Man'],
+                  datasets: [{
+                    label: ' units sold',
+                    data: [1.5, 0.71, 0.81, 4.34, 10.6, 10.9],
+                    backgroundColor: [
+                      'rgba(255, 99, 132, 0.2)',
+                      'rgba(54, 162, 235, 0.2)',
+                      'rgba(255, 206, 86, 0.2)',
+                      'rgba(75, 192, 192, 0.2)',
+                      'rgba(153, 102, 255, 0.2)',
+                      'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                      'rgba(255, 99, 132, 1)',
+                      'rgba(54, 162, 235, 1)',
+                      'rgba(255, 206, 86, 1)',
+                      'rgba(75, 192, 192, 1)',
+                      'rgba(153, 102, 255, 1)',
+                      'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                  }]
+                },
+                options: {
+                  legend: {
+                    display: false
+                  },
+                  title: {
+                    display: true,
+                    text: 'Estimated gross revenue for the most popular arcade games (adjusted for inflation)'
+                  },
+                  responsive: true,
+                  scales: {
+                    yAxes: [{
+                      scaleLabel: {
+                        display: true,
+                        labelString: 'billiion $'
+                      },
+                      ticks: {
+                        beginAtZero: true
+                      }
+                    }]
+                  }
+                }
+              });
+            </script>
+
+
+
+
+          </div>
+          <div class="col-md-7">
+            <div class="row">
+              <div class="col-md-12 text-white retro_gaming-font ml-5" style="font-size: 1.5vh;">
+
+                <h4 class="spacefont mt-3">Sales in revenue</h4>
+                <p>By mid-1981, Space Invaders machines had grossed more than four billion quarters, or $1 billion, and continued to gross an average of $600 million a year until 1982, by which time it had grossed $2 billion in quarters (equivalent
+                  to $7.84 billion in 2020), with a net profit of $450 million (equivalent to $1.76 billion in 2020). This made it the best-selling video game and highest-grossing "entertainment product" of its time, with comparisons made to the
+                  then highest-grossing film Star Wars, which had grossed $486 million, with a net profit of $175 million. Space Invaders earned Taito profits of over $500 million.</p>
+                  <!-- this paragraph is only visible on larger screens then mobile -->
+                <p class="d-none d-md-block">The 1980 Atari 2600 version was the first official licensing of an arcade game for consoles and became the first "killer app" for video game consoles after quadrupling the system's sales. It sold over two million units in its first
+                  year on sale as a home console game, making it the first title to sell over a million cartridges. Other official ports were released for the Atari 8-bit computer line and Atari 5200 console, while Taito later released it for the
+                  Nintendo Famicom in 1985, but just in Japan. Numerous unofficial clones were made, such as the popular computer games Super Invader (1979) and TI Invaders (1981); the latter was the top-selling game for the Texas Instruments
+                  TI-99/4A through at least 1982. Adjusted for inflation, sales of all versions of Space Invaders combined are estimated to have exceeded $13 billion in gross revenue, making it the highest-grossing video game of all time.</p>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- this section is only visible on mobile -->
+<section class="d-md-none" >
+  <!-- craeted container to hold text and images -->
+  <div class="container h-100">
+  <div class="row h-100 align-items-center">
+
+    <div class="col-md-6 d-flex justify-content-center">
+    <img src="https://cdnb.artstation.com/p/assets/images/images/031/135/397/large/eneko-alava-3.jpg?1602701132" class="img-fluid" alt="">
+    </div>
+
+  <div class="col-md-6 ">
+
+    <p>The 1980 Atari 2600 version was the first official licensing of an arcade game for consoles and became the first "killer app" for video game consoles after quadrupling the system's sales. It sold over two million units in its first
+      year on sale as a home console game, making it the first title to sell over a million cartridges. Other official ports were released for the Atari 8-bit computer line and Atari 5200 console, while Taito later released it for the
+      Nintendo Famicom in 1985, but just in Japan. Numerous unofficial clones were made, such as the popular computer games Super Invader (1979) and TI Invaders (1981); the latter was the top-selling game for the Texas Instruments
+      TI-99/4A through at least 1982. Adjusted for inflation, sales of all versions of Space Invaders combined are estimated to have exceeded $13 billion in gross revenue, making it the highest-grossing video game of all time.</p>
+  </div>
+
+  </div>
+  </div>
+</section>
+
+
+    <section>
+<!-- table -->
+      <div class="container text-white retro_gaming-font  container h-100" >
+<div class="row  h-100 align-items-center">
+<div class="container">
+
+
+
+
+        <div class="row row w-100  ">
+          <div class="col-12 d-flex justify-content-center mb-3" style="font-size:3vh;">
+            Reception
+          </div>
+        </div>
+        <div class="row border ">
+          <div class="col d-flex justify-content-center">
+            Rewiew score
+          </div>
+        </div>
+        <div class="row border">
+          <div class="col">
+            Publicatoins
+          </div>
+          <div class="col">
+            Score
+          </div>
+        </div>
+        <div class="row border">
+          <div class="col align-self  -center">
+            All game
+          </div>
+          <div class="col">
+            <p style="margin:0px;">
+              Arcade: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><br>
+              Atari 2600: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><br>
+              Atari 5200:<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><br>
+              SNES:<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><br>
+              </o>
+
+          </div>
+        </div>
+        <div class="row border">
+          <div class="col d-flex justify-content-center">
+            Awards
+          </div>
+        </div>
+        <div class="row border">
+          <div class="col">
+            Award
+          </div>
+          <div class="col">
+            Publicaton
+          </div>
+        </div>
+        <div class="row border">
+          <div class="col">
+            1st arcade awards
+          </div>
+          <div class="col">
+            Game of the year
+          </div>
+        </div>
+        <div class="row border">
+          <div class="col">
+            Guiness World Records
+          </div>
+          <div class="col">
+            Top Arcade Game
+          </div>
+        </div>
+        <div class="row border">
+          <div class="col align-self-center ">
+            The Times
+          </div>
+          <div class="col">
+            Most Influential Video Game Ever
+          </div>
+        </div>
+      </div>
+</div>
+</div>
+    </section>
+
+
+
+
+
+
+
+<!-- bootsrap carousel -->
+
+    </div>
+    <section style="background:black;">
+
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="parent d-flex justify-content-center align-items-center">
+              <img src="posters/poster (2).jpg" height="600px">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="parent d-flex justify-content-center">
+              <img src="posters/poster.jpg" height="600px">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="parent d-flex justify-content-center">
+              <img src="posters/poster (3).jpg" height="600px">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="parent d-flex justify-content-center">
+              <img src="posters/poster (4).jpg" height="600px">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="parent d-flex justify-content-center">
+              <img src="posters/poster (5).jpg" height="600px">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="parent d-flex justify-content-center">
+              <img src="posters/poster (6).jpg" height="600px">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="parent d-flex justify-content-center">
+              <img src="posters/poster (7).jpg" height="600px">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="parent d-flex justify-content-center">
+              <img src="posters/poster (8).jpg" height="600px">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="parent d-flex justify-content-center">
+              <img src="posters/poster (9).jpg" height="600px">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="parent d-flex justify-content-center">
+              <img src="posters/poster (10).jpg" height="600px">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="parent d-flex justify-content-center">
+              <img src="posters/poster (11).jpg" height="600px">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="parent d-flex justify-content-center">
+              <img src="posters/poster (12).jpg" height="600px">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="parent d-flex justify-content-center">
+              <img src="posters/poster (13).jpg" height="600px">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="parent d-flex justify-content-center">
+              <img src="posters/poster (14).jpg" height="600px">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="parent d-flex justify-content-center">
+              <img src="posters/poster (15).jpg" height="600px">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="parent d-flex justify-content-center">
+              <img src="posters/poster (16).jpg" height="600px">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="parent d-flex justify-content-center">
+              <img src="posters/poster (17).jpg" height="600px">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="parent d-flex justify-content-center">
+              <img src="posters/poster (18).jpg" height="600px">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="parent d-flex justify-content-center">
+              <img src="posters/poster (19).jpg" height="600px">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="parent d-flex justify-content-center">
+              <img src="posters/poster (20).jpg" height="600px">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="parent d-flex justify-content-center">
+              <img src="posters/poster (21).jpg" height="600px">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="parent d-flex justify-content-center">
+              <img src="posters/poster.png" height="600px">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="parent d-flex justify-content-center">
+              <img src="posters/poster2.png" height="600px">
+            </div>
+          </div>
+
+        </div>
+        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+</body>
+
+</html>

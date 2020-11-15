@@ -1,0 +1,50 @@
+@font-face {
+    font-family: 'invaders';
+    src: url('fonts/invaders-6ry1-webfont.woff2') format('woff2'),
+         url('fonts/invaders-6ry1-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'Space Invaders';
+    src: url('fonts/Space-Invaders.woff2') format('woff2'),
+        url('fonts/Space-Invaders.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+.spacefont{
+  font-family: Space Invaders;
+  color:red;
+}
+
+.space-invaders-hading{
+  font-family: invaders;
+  font-size: 2000%;
+  z-index: 4;
+}
+.invaders-font{
+  font-family: invaders;
+
+}
+/* FONT IMPORT */
+
+
+body {
+margin: 0;
+overflow: visible;
+}
+
+/* All the snapping stuff */
+.scroll-container {
+height: 100vh;
+overflow-y: scroll;
+scroll-snap-type: y mandatory;
+}
+
+section {
+height: 100vh;
+scroll-snap-align: start;
+overflow-y: visible;
+}

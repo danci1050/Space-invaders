@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Space Invaders</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+
+
+  <script>
+    $(window).on("load", function() {
+      $(".loader-wrapper").fadeOut("slow");
+    });
+
+
+    $(document).ready(function() {
+      var height = $(window).height();
+
+      document.addEventListener('scroll', function(event) {
+        var scroll = $('main').scrollTop();
+
+        if (scroll >= height) {
+
+
+          $(".navbar").removeClass("bg-spacinvaders-navber-blue");
+          $(".navbar").addClass("bg-spacinvaer-navbar-semitransparent");
+
+        } else {
+          $(".navbar").removeClass("bg-spacinvaer-navbar-semitransparent");
+          $(".navbar").addClass("bg-spacinvaders-navber-blue");
+        }
+        if (event.target.id === 'idOfUl') { // or any other filtering condition
+          console.log('scrolling', event.target);
+
+        }
+      }, true /*Capture event*/ );
+
+    });
+  </script>
+
+
+
+
+</head>
+
+
+
+
+<body>
+
+  <div class="loader-wrapper">
+    <img class="loader-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Space_invaders_logo.svg/1024px-Space_invaders_logo.svg.png" alt="">
+  </div>
+
+
+
+
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark ">
+    <a class="navbar-brand invaders-font text-white" href="#">'</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item">
+          <a class="nav-link spacefont" href="Gameplay.html">Gameplay </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link spacefont" href="development.html">Development</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link spacefont" href="SalesAndPorts.html">Sales and Ports</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link spacefont" href="legacy.html">Legacy</a>
+        </li>
+
+      </ul>
+
+      <button class="btn btn-outline-light spacefont" type="submit">Play the game</button>
+
+    </div>
+  </nav>
+
+
+  <main class="scroll-container">
+    <section style="background: rgba(0,0,0,0)">
+
+
+      <div class="video-background" >
+    <div class="video-foreground">
+      <iframe src="https://www.youtube.com/embed/IRhOrTB1mrc?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&mute=1&loop=1&playlist=IRhOrTB1mrc"   allowfullscreen></iframe>
+    </div>
+  </div>
+
+
+
+        <div class="container h-100">
+          <div class="row h-100 justify-content-center align-items-center">
+            <img  src="gameplaylogo.png" class="img-fluid" alt="">
+          </div>
+        </div>
+    </section>
+
+    <section>
+
+      <div class="container h-100">
+        <h2 class="d-flex justify-content-center">Desription of the game</h2>
+    <div class="row  align-items-center">
+      <div class="col-md-5
+     d-md-none d-flex justify-content-center">
+    <img src="https://www.gamesetwatch.com/space_invaders01.jpg" class="img-fluid" alt="">
+      </div>
+      <div class="col-md-6">
+
+
+
+<p class=" text-white retro_gaming-font ">
+  Space Invaders is a fixed shooter in which the player controls a laser cannon by moving it horizontally across the bottom of the screen and firing at descending aliens. The aim is to defeat five rows of eleven aliens—although some versions feature different numbers—that move horizontally back and forth across the screen as they advance toward the bottom of the screen. The player's laser cannon is partially protected by several stationary defense bunkers—the number also varies by version—that are gradually destroyed from the top and bottom by blasts from either the aliens or the player.</p>
+
+<p class="text-white retro_gaming-font  d-none d-md-block ">The player defeats an alien and earns points by shooting it with the laser cannon. As more aliens are defeated, the aliens' movement and the game's music both speed up. Defeating all the aliens on-screen brings another wave that is more difficult, a loop which can continue endlessly. A special "mystery ship" will occasionally move across the top of the screen and award bonus points if destroyed.</p>
+
+<p class=" text-white retro_gaming-font d-none d-md-block " >The aliens attempt to destroy the player's cannon by firing at it while they approach the bottom of the screen. If they reach the bottom, the alien invasion is declared successful and the game ends tragically; otherwise, it ends generally if the player's last cannon is destroyed by the enemy's projectiles.</p>
+  </div>
+
+
+  <div class="col-md-6
+ d-none d-md-block">
+<img src="https://thumbs-prod.si-cdn.com/5EXIaf6WkalC33v9TqwQMATk13o=/800x600/filters:no_upscale()/https://public-media.si-cdn.com/filer/7f/4c/7f4c2d11-089f-4d86-8052-5cf95295be7e/file-20180531-69508-1oenzpj.png" class="img-fluid" alt="" >
+  </div>
+  </div>
+</div>
+</section>
+
+
+<section class="d-md-none">
+  <div class="container h-100">
+<div class="row h-100 align-items-center ">
+  <div class="col-md-5 d-flex justify-content-center pt-5">
+<img src="https://thumbs-prod.si-cdn.com/5EXIaf6WkalC33v9TqwQMATk13o=/800x600/filters:no_upscale()/https://public-media.si-cdn.com/filer/7f/4c/7f4c2d11-089f-4d86-8052-5cf95295be7e/file-20180531-69508-1oenzpj.png" class="img-fluid" alt="">
+  </div>
+  <div class="col-md-7">
+<p>The player defeats an alien and earns points by shooting it with the laser cannon. As more aliens are defeated, the aliens' movement and the game's music both speed up. Defeating all the aliens on-screen brings another wave that is more difficult, a loop which can continue endlessly. A special "mystery ship" will occasionally move across the top of the screen and award bonus points if destroyed.</p>
+
+    <p class="text-white retro_gaming-font">
+      The aliens attempt to destroy the player's cannon by firing at it while they approach the bottom of the screen. If they reach the bottom, the alien invasion is declared successful and the game ends tragically; otherwise, it ends generally if the player's last cannon is destroyed by the enemy's projectiles.</p>
+
+</div>
+</div>
+</div>
+
+    </section>
+    <section>
+      <div class="container h-100">
+    <div class="row h-100 align-items-center ">
+      <div class="col-md-5">
+        <img src="https://image.dosgamesarchive.com/screenshots/d2_25.png" class="img-fluid mt-5" alt="">
+      </div>
+
+    <div class="col-md-7 mt-1">
+<h4 class=" d-flex justify-content-start">Gamedevelopers inspired by Space Invaders</h4>
+<p class="d-flex justify-content-start">Game developers including Shigeru Miyamoto (creator of the franchises Donkey Kong, Super Mario, and The Legend of Zelda), Hideo Kojima (Metal Gear), and John Romero and John Carmack (both Doom) have cited Space Invaders as their introduction to video games. Miyamoto considers Space Invaders to be the game that revolutionized the video game industry. Deus Ex creator Warren Spector said: "Space Invaders and games like it represent the roots of everything we see today in gaming. It represents the birth of a new art form, one that literally changed the world. Space Invaders is important as an historical artefact, no less than the silent films of the early twentieth century or early printed books." Several publications ascribed the expansion of the video game industry from a novelty into a global industry to the success of the game. Edge magazine attributed the shift of games from bars and amusement arcades to more mainstream locations, such as restaurants and department stores, to Space Invaders. Its popularity was such that it was the first game where an arcade machine's owner could make up for the cost of the machine in under one month, or in some places within one week.</p>
+
+
+    </div>
+    </div>
+    </div>
+    </section>
+<section>
+  <div class="container h-100">
+    <div class="row h-100 align-items-center ">
+      <div class="col-md-5 d-md-none">
+        <img src="https://cdn.gamer-network.net/2016/usgamer/zelda.png" class="img-fluid mt-5" alt="">
+      </div>
+      <div class="col-md-7 mt-1">
+        <h4 class="d-flex justify-content-end" >Influence on game design</h4>
+        <p>Space Invaders also moved the gaming industry from Pong-inspired sports games, grounded in real-world situations, towards fantastical action games. Space Invaders helped action games become the dominant genre in arcades and on consoles. Guinness World Records considered Space Invaders one of the most successful arcade shooting games by 2008. In describing it as a "seminal arcade classic", IGN listed it as the number eight "classic shoot 'em up". Space Invaders set the template for the shoot 'em up genre. Its worldwide success created a demand for a wide variety of science fiction games, inspiring the development of arcade games, such as Atari's Asteroids, Williams Electronics' Defender, and Namco's Galaxian and Galaga, which were modeled after Space Invaders's gameplay and design. This influence could be said to extend to most shooting games released to the present day, including first-person shooters (FPS) such as Wolfenstein, Doom, Halo and Call of Duty. Space Invaders also had an influence on early computer dungeon crawl games such as Dungeons of Daggorath, which used similar heartbeat sounds to indicate player health. Space Invaders cabinets have become collector's items, with the cocktail and cabaret versions being the rarest.
+        </p>
+      </div>
+      <div class="col-md-5 d-none d-md-block">
+        <img src="https://cdn.gamer-network.net/2016/usgamer/zelda.png" class="img-fluid" alt="">
+      </div>
+  </div>
+  </div>
+</section>
+  </main>
+</body>
+
+</html>

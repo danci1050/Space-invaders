@@ -1,0 +1,371 @@
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 0px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+@font-face {
+    font-family: 'invaders';
+    src: url('fonts/invaders-6ry1-webfont.woff2') format('woff2'),
+         url('fonts/invaders-6ry1-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'Space Invaders';
+    src: url('fonts/Space-Invaders.woff2') format('woff2'),
+        url('fonts/Space-Invaders.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'retro_gamingregular';
+    src: url('fonts/retro_gaming-webfont.woff2') format('woff2'),
+         url('fonts/retro_gaming-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+.retro_gaming-font{
+  font-family: retro_gamingregular;
+}
+.spacefont{
+  font-family: Space Invaders;
+}
+
+.space-invaders-hading{
+  font-family: invaders;
+  font-size: 2500%;
+  z-index: 4;
+}
+.invaders-font{
+  font-family: invaders;
+
+}
+/* FONT IMPORT */
+
+
+/* REPLACE VIDEO WITH IMAGE */
+
+@media (min-width: 800px) and (max-width: 850px) {
+        .navbar:not(.top-nav-collapse) {
+            background: #1C2331!important;
+        }
+    }
+    .loader-wrapper {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: #007A8E;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10 ;
+    }
+    .loader-img{
+      width: 80vw;
+    }
+/* loader */
+
+.bg-spacinvaders-navber-blue{
+  background-color: rgba(0,0,0,0);
+}
+.bg-spacinvaer-navbar-semitransparent{
+  background-color: rgba(0,0,0,0.9) ;
+}
+
+/* change nav bar  */
+img{
+  max-height: 75vh;
+}
+body {
+margin: 0;
+overflow: visible;
+}
+
+/* All the snapping stuff */
+.scroll-container {
+height: 100vh;
+width: 100vw;
+overflow-y: scroll;
+scroll-snap-type: y mandatory;
+}
+
+section {
+height: 100vh;
+scroll-snap-align: start;
+overflow-y: visible;
+background: black;
+}
+.home{
+  background-image: url('spaceback.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.home img{
+  width: 80vh;
+  max-width: 100vw;
+}
+p{
+
+  font-family: retro_gamingregular;
+  color: white;
+  text-align:justify;
+  font-size: calc(0.1vw + 0.8vh + 0.5vmin);
+}
+
+ul{
+
+  font-family: retro_gamingregular;
+  color: white;
+  text-align:justify;
+  font-size: calc(0.2vw + 0.8vh + 0.5vmin);
+}
+
+@media all and (max-device-width: 720px){
+
+}
+
+@media all and (max-device-width: 640px){
+  p{
+
+    font-family: retro_gamingregular;
+    color: white;
+    text-align:justify;
+    font-size: calc(1vw + 0.6vh + 0.5vmin);
+  }
+  ul{
+
+    font-family: retro_gamingregular;
+    color: white;
+    text-align:justify;
+    font-size: calc(1vw + 0.6vh + 0.5vmin);
+  }
+  .longersection{
+  height: 160vh;
+  }
+  img{
+
+    max-height: 30vh;
+  }
+  h4{
+      font-size: calc(1vw + 0.8vh + 0.5vmin);
+
+  }
+}
+h3{
+  font-size: calc(0.5vw + 0.3vh + 0.5vmin);
+}
+@media all and (max-device-width: 320px){
+
+
+  p{
+
+    font-family: retro_gamingregular;
+    color: white;
+    text-align:justify;
+    font-size: calc(1vw + 0.6vh + 0.5vmin);
+  }
+  ul{
+
+    font-family: retro_gamingregular;
+    color: white;
+    text-align:justify;
+    font-size: calc(1vw + 0.6vh + 0.5vmin);
+  }
+  .longersection{
+  height: 160vh;
+  }
+  img{
+    max-height: 40vh;
+  }
+  h4{
+      font-size: calc(1vw + 0.8vh + 0.5vmin);
+
+  }
+}
+
+
+iframe{
+  border:0px;
+}
+
+
+
+h4{
+    font-family: Space Invaders;
+    color: #10A415;
+}
+
+
+h2{
+    font-family: Space Invaders;
+    color: #10A415;
+    padding-top: 10vh;
+    padding-bottom: 3vh;
+}
+
+
+.flex-container{
+  position: relative;
+}
+
+.inner-element{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%,-50%);
+  /* or 3d alternative if you will add animations (smoother transitions) */
+  transform: translate3d(-50%,-50%,0);
+
+  /* Other styling stuff */
+
+}
+
+.salesandports{
+  position: relative;
+  background-image: url('spaceinvaders.png');
+  background-size: cover;
+  background-position: 0 0;
+  background-repeat: repeat-x;
+  -webkit-animation: moving 5s linear infinite;
+  animation: moving 2500s linear infinite;
+}
+@keyframes moving {
+  from{
+    background-position: 0 0;
+  }
+  to{
+    background-position: 5000vw 0;
+  }
+}
+.blackoverlay{
+  background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.fa-star{
+  color:yellow;
+}
+
+.maxheight{
+  max-height: 80vh;
+}
+
+
+
+#myCarousel {
+  height: 100%;
+  width: 100%;
+}
+
+.carousel-indicators {
+  margin-bottom: 8px;
+}
+
+.carousel-indicators>li {
+  width: 10px;c
+  height: 10px;
+  border-radius: 100%;
+}
+
+.carousel-inner {
+  height: 100%;
+  background-color: black;
+}
+
+.carousel-item {
+  text-align: center;
+}
+
+.parent {
+  height: 100vh;
+}
+
+.carousel-item img {
+  display: block;
+  margin: auto;
+}
+
+
+* { box-sizing: border-box; }
+.video-background {
+  background: #000;
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+  z-index: -99;
+}
+.video-foreground,
+.video-background iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.vid-info { position: absolute; top: 0; right: 0; width: 33%; background: rgba(0,0,0,0.3); color: #fff; padding: 1rem; font-family: Avenir, Helvetica, sans-serif; }
+.vid-info h1 { font-size: 2rem; font-weight: 700; margin-top: 0; line-height: 1.2; }
+.vid-info a { display: block; color: #fff; text-decoration: none; background: rgba(0,0,0,0.5); transition: .6s background; border-bottom: none; margin: 1rem auto; text-align: center; }
+@media (min-aspect-ratio: 16/9) {
+  .video-foreground { height: 300%; top: -100%; }
+}
+@media (max-aspect-ratio: 16/9) {
+  .video-foreground { width: 300%; left: -100%; }
+}
+
+
+#slide_BG{
+display: table;
+  width: 100vw;
+  height: 100vh;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation-direction: alternate;
+  animation: slide_BG 64s linear infinite;
+  animation-timing-function: ease-in-out;;
+}
+@keyframes slide_BG {
+  1%{
+    background-image: url(legacy/l1.jpg);
+  }
+  10%{
+  background-image: url(legacy/l2.jpg);  }
+  20%{
+  background-image: url(legacy/l3.jpg);  }
+  30%{
+  background-image: url(legacy/l4.jpg);  }
+  40%{
+  background-image: url(legacy/l5.jpg);  }
+  50%{
+  background-image: url(legacy/l6.jpg);  }
+  60%{
+  background-image: url(legacy/l7.jpg);  }
+  70%{
+  background-image: url(legacy/l8.jpg);  }
+  80%{
+  background-image: url(legacy/l9.jpg);  }
+  690%{
+  background-image: url(legacy/l10.jpg);  }
+  100%{
+  background-image: url(legacy/l11.jpg);  }
+}
+#div1 { background: url('https://img.discogs.com/-4N0FwpQKj9-Wrl3Lxtz-Xt2hjY=/fit-in/600x593/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-39571-1225374443.jpeg.jpg') ; width: 50%; height: 50%; float: left;}
+#div2 { background: url('https://i.pinimg.com/originals/65/3e/27/653e2765b3e7cb25de9968e8fae841f9.jpg'); width: 50%; height: 50%; float: left;}
+#div3 { background: url('https://cdn.vox-cdn.com/thumbor/A9Dfzkt84fgefEQpJQOqRWUnsJ8=/0x213:570x593/1200x800/filters:focal(0x213:570x593)/cdn.vox-cdn.com/assets/954593/themillions-20.jpeg'); width: 50%; height: 50%; float: left;}
+#div4 { background: url('legacy/l9cut.jpg'); width: 50%; height: 50%; float: left;}

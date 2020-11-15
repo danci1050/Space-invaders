@@ -1,0 +1,35 @@
+  <Header>
+    <!--navbar that stays fixed ven when scrolling -->
+    <nav class="navbar fixed-top navbar-expand-lg">
+      <a class="navbar-brand navImage">
+        <!--navbar image with height 30 and width 30 -->
+        <span class="navimg">!</span>
+      </a>
+      <a class="navbar-brand text-success" href="index.html">Space Invader <span class="sr-only">(current)</span></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon navimg">"</span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link text-success" href="Development.html">Development</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-success" href="SalesAndPorts.html">Sales and ports</a>
+          </li>
+          <!--Dropdown for multiple option of legacy-->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-success" href="Legacy.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Effect
+            </a>
+            <div class="dropdown-menu dropdwn" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item text-success droptxt" href="Legacy.html#legacy">legacy</a>
+              <a class="dropdown-item text-success droptxt" href="Legacy.html#influence">Influence</a>
+              <a class="dropdown-item text-success droptxt" href="Legacy.html#ranking">Rankings</a>
+              <a class="dropdown-item text-success droptxt" href="Legacy.html#remake">Remakes and sequels</a>
+              <a class="dropdown-item text-success droptxt" href="Legacy.html#popularculture">In popular culture</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>

@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Space Invaders</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+
+
+
+  <script type="text/javascript">
+    $(window).on("load", function() {
+      $(".loader-wrapper").fadeOut("slow");
+    });
+
+
+    $(document).ready(function() {
+      var height = $(window).height();
+
+      document.addEventListener('scroll', function(event) {
+        var scroll = $('main').scrollTop();
+
+        if (scroll >= height) {
+          $(".navbar").removeClass("bg-spacinvaders-navber-blue");
+          $(".navbar").addClass("bg-spacinvaer-navbar-semitransparent");
+
+
+
+        } else {
+          $(".navbar").removeClass("bg-spacinvaer-navbar-semitransparent");
+          $(".navbar").addClass("bg-spacinvaders-navber-blue");
+
+        }
+        if (event.target.id === 'idOfUl') { // or any other filtering condition
+          console.log('scrolling', event.target);
+
+        }
+      }, true /*Capture event*/ );
+
+    });
+  </script>
+
+
+
+
+</head>
+
+
+
+
+<body>
+
+  <div class="loader-wrapper">
+    <img class="loader-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Space_invaders_logo.svg/1200px-Space_invaders_logo.svg.png" alt="">
+  </div>
+
+
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark ">
+    <a class="navbar-brand invaders-font text-white" href="#">'</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item">
+          <a class="nav-link spacefont" href="Gameplay.html">Gameplay </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link spacefont" href="development.html">Development</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link spacefont" href="SalesAndPorts.html">Sales and Ports</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link spacefont" href="legacy.html">Legacy</a>
+        </li>
+
+      </ul>
+
+      <button class="btn btn-outline-light spacefont" type="submit">Play the game</button>
+
+    </div>
+  </nav>
+
+
+
+
+  <!-- welcome screen's contaienr -->
+    <main class="scroll-container">
+      <section class="salesandports">
+        <!-- makes background darker -->
+        <div class="blackoverlay">
+
+
+          <div class="container h-100">
+            <div class="row h-100 justify-content-center align-items-center">
+              <!-- displays logo -->
+              <img class="img-fluid" src="salesandportslogo.png" alt="" style="width:40vw">
+            </div>
+          </div>
+        </div>
+      </section>
+  <!--  -->
+      <section >
+        <div class="container h-100 container-fluid flex-container">
+
+
+
+
+  <!-- creates chart with the help of chart.js -->
+          <div class="row w-100  inner-element d-flex flex-wrap align-items-center">
+            <div class="col-md-5 ">
+              <canvas id="myChart" width="400" height="400"></canvas>
+              <script>
+                var ctx = document.getElementById('myChart').getContext('2d');
+                var myChart = new Chart(ctx, {
+                  type: 'bar',
+                  data: {
+                    labels: ['Asteorids', 'Donkey Kong', 'Mortal Kombat II', 'Street Fighter II', 'Space Invaders', 'Pac-Man'],
+                    datasets: [{
+                      label: ' units sold',
+                      data: [100000, 132000, 27000, 200000, 360000, 400000],
+                      backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                      ],
+                      borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                      ],
+                      borderWidth: 1
+                    }]
+                  },
+                  options: {
+                    legend: {
+                      display: false
+                    },
+                    title: {
+                      display: true,
+                      text: 'Units sold for the most popluar arcade games'
+                    },
+                    maintainAspectRatio: false,
+                    responsive: true,
+                    scales: {
+                      yAxes: [{
+                        ticks: {
+                          beginAtZero: true
+                        }
+                      }]
+                    }
+                  }
+                });
+              </script>
+
+
+
+
+            </div>
+            <div class="col-md-7 ">
+              <div class="row d-none d-md-block d-md-block">
+                <div class="col-md-12 pl-5">
+                  <img src="https://cdnb.artstation.com/p/assets/images/images/031/135/397/large/eneko-alava-3.jpg?1602701132 " class="mb-3 img-fluid" alt=""  >
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 pl-5 pt-4">
+
+                  <h4 >Sales in units</h4>
+
+                  <p>In the first few months following its release in Japan, Space Invaders became popular. Specialty arcades opened with nothing but Space Invaders cabinets, and by the end of 1978 Taito had installed over 100,000 machines and
+                    grossed over US$600 million in Japan alone.By 1980, Taito had sold over 300,000 Space Invaders arcade machines in Japan, and 60,000 machines in the United States within one year, where prices ranged from $2000 to $3000 for each
+                    machine.</p>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+      </section>
+      <section style="background:black;">
+
+
+        <div class="container h-100  container-fluid flex-container" style="overflow:hidden;">
+          <div class="row">
+
+          </div>
+
+
+
+  <!-- crates chart with the help of chart.js -->
+          <div class="row w-100 inner-element">
+            <div class="col-md-5 ">
+
+              <canvas id="myChart1" width="400" height="400" class="pl-2"></canvas>
+              <script>
+                var ctx = document.getElementById('myChart1').getContext('2d');
+                var myChart = new Chart(ctx, {
+                  type: 'bar',
+                  data: {
+                    labels: ['Asteorids', 'Donkey Kong', 'Mortal Kombat II', 'Street Fighter II', 'Space Invaders', 'Pac-Man'],
+                    datasets: [{
+                      label: ' units sold',
+                      data: [1.5, 0.71, 0.81, 4.34, 10.6, 10.9],
+                      backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                      ],
+                      borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                      ],
+                      borderWidth: 1
+                    }]
+                  },
+                  options: {
+                    legend: {
+                      display: false
+                    },
+                    title: {
+                      display: true,
+                      text: 'Estimated gross revenue for the most popular arcade games (adjusted for inflation)'
+                    },
+                    responsive: true,
+                    scales: {
+                      yAxes: [{
+                        scaleLabel: {
+                          display: true,
+                          labelString: 'billiion $'
+                        },
+                        ticks: {
+                          beginAtZero: true
+                        }
+                      }]
+                    }
+                  }
+                });
+              </script>
+
+
+
+
+            </div>
+            <div class="col-md-7">
+              <div class="row">
+                <div class="col-md-12 text-white retro_gaming-font pl-5 " style="font-size: 1.5vh;">
+
+                  <h4 class="spacefont mt-3 pt-4">Sales in revenue</h4>
+                  <p>By mid-1981, Space Invaders machines had grossed more than four billion quarters, or $1 billion, and continued to gross an average of $600 million a year until 1982, by which time it had grossed $2 billion in quarters (equivalent
+                    to $7.84 billion in 2020), with a net profit of $450 million (equivalent to $1.76 billion in 2020). This made it the best-selling video game and highest-grossing "entertainment product" of its time, with comparisons made to the
+                    then highest-grossing film Star Wars, which had grossed $486 million, with a net profit of $175 million. Space Invaders earned Taito profits of over $500 million.</p>
+                    <!-- this paragraph is only visible on larger screens then mobile -->
+                  <p class="d-none d-md-block">The 1980 Atari 2600 version was the first official licensing of an arcade game for consoles and became the first "killer app" for video game consoles after quadrupling the system's sales. It sold over two million units in its first
+                    year on sale as a home console game, making it the first title to sell over a million cartridges. Other official ports were released for the Atari 8-bit computer line and Atari 5200 console, while Taito later released it for the
+                    Nintendo Famicom in 1985, but just in Japan. Numerous unofficial clones were made, such as the popular computer games Super Invader (1979) and TI Invaders (1981); the latter was the top-selling game for the Texas Instruments
+                    TI-99/4A through at least 1982. Adjusted for inflation, sales of all versions of Space Invaders combined are estimated to have exceeded $13 billion in gross revenue, making it the highest-grossing video game of all time.</p>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- this section is only visible on mobile -->
+  <section class="d-md-none" >
+    <!-- craeted container to hold text and images -->
+    <div class="container h-100  align-items-center">
+    <div class="row h-100">
+
+      <div class="col-md-6 d-flex justify-content-center">
+      <img src="https://cdnb.artstation.com/p/assets/images/images/031/135/397/large/eneko-alava-3.jpg?1602701132" class="img-fluid pt-5 pb-5" alt="">
+      </div>
+
+    <div class="col-md-6 ">
+
+      <p>The 1980 Atari 2600 version was the first official licensing of an arcade game for consoles and became the first "killer app" for video game consoles after quadrupling the system's sales. It sold over two million units in its first
+        year on sale as a home console game, making it the first title to sell over a million cartridges. Other official ports were released for the Atari 8-bit computer line and Atari 5200 console, while Taito later released it for the
+        Nintendo Famicom in 1985, but just in Japan. Numerous unofficial clones were made, such as the popular computer games Super Invader (1979) and TI Invaders (1981); the latter was the top-selling game for the Texas Instruments
+        TI-99/4A through at least 1982. Adjusted for inflation, sales of all versions of Space Invaders combined are estimated to have exceeded $13 billion in gross revenue, making it the highest-grossing video game of all time.</p>
+    </div>
+
+    </div>
+    </div>
+  </section>
+
+
+      <section>
+  <!-- table -->
+        <div class="container text-white retro_gaming-font  container h-100" >
+  <div class="row  h-100 align-items-center">
+    <div class="col-12 pt-5">
+<h4 class="mt-2 d-flex justify-content-center">Reviws</h4>
+
+  <div class="container">
+
+
+
+
+
+          <div class="row border ">
+            <div class="col d-flex justify-content-center">
+          <p>    Rewiew score</p>
+            </div>
+          </div>
+          <div class="row border">
+            <div class="col">
+            <p>    Publicatoins</p>
+            </div>
+            <div class="col">
+            <p>    Score</p>
+            </div>
+          </div>
+          <div class="row border">
+            <div class="col align-self  -center">
+              <p>  All game</p>
+            </div>
+            <div class="col">
+              <p style="margin:0;">
+                Arcade: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><br>
+                Atari 2600: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><br>
+                Atari 5200:<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><br>
+                SNES:<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><br></p>
+
+
+            </div>
+          </div>
+          <div class="row border">
+            <div class="col d-flex justify-content-center">
+              <p>  Awards</p>
+            </div>
+          </div>
+          <div class="row border">
+            <div class="col">
+              <p>  Award</p>
+            </div>
+            <div class="col">
+              <p>  Publicaton</p>
+            </div>
+          </div>
+          <div class="row border">
+            <div class="col">
+            <p>    1st arcade awards</p>
+            </div>
+            <div class="col">
+              <p>  Game of the year</p>
+            </div>
+          </div>
+          <div class="row border">
+            <div class="col">
+              <p>  Guiness World Records</p>
+            </div>
+            <div class="col">
+            <p>    Top Arcade Game</p>
+            </div>
+          </div>
+          <div class="row border">
+            <div class="col align-self-center ">
+              <p>  The Times</p>
+            </div>
+            <div class="col">
+              <p>  Most Influential Video Game Ever</p>
+            </div>
+          </div>
+        </div>
+        </div>
+        <div class="col-12">
+          <p class="d-none d-md-block">
+          Technology journalist Jason Whittaker credited the game with ending the video game crash of 1977, caused by Pong clones flooding the market, and beginning the golden age of video arcade games (1978–1980s). According to The Observer, home console versions of Space Invaders were popular and encouraged users to learn to program; many became industry leaders. 1UP.com stated that Space Invaders showed that video games could compete against the major entertainment media at the time: movies, music, and television. IGN attributed the launch of the "arcade phenomenon" in North America in part to Space Invaders. Electronic Games credited the game's success as the impetus behind video gaming becoming a rapidly growing hobby, and as "the single most popular coin-operated attraction of all time." Game Informer considered it, along with Pac-Man, one of the most popular arcade games; it tapped into popular culture and generated excitement during the golden age of arcades. Space Invaders was inducted into the World Video Game Hall of Fame in 2016.
+        </p>
+<p class="d-none d-md-block">
+In 1996, Next Generation magazine put Space Invaders at number 97 on their list of the "Top 100 Games of All Time", saying that it "provides an elegance and simplicity not found in later games like Phoenix [1980]." IGN listed it as one of the "Top 10 Most Influential Games" in 2007, citing it as a source of inspiration to video game designers and the impact it had on the shooting genre. The Times ranked it No. 1 on its list of "The ten most influential video games ever" in 2007. 1UP ranked it at No. 3 on its list of "The 60 Most Influential Games of All Time," stating that, in contrast to earlier arcade games which "were attempts to simulate already-existing things," Space Invaders was "the first video game as a video game, instead of merely a playable electronic representation of something else." In 2008, Guinness World Records listed it as the top-rated arcade game in technical, creative, and cultural impact. Entertainment Weekly named Space Invaders one of the top ten games for the Atari 2600 home console in 2013. In 2018, it was ranked 87th in Video Game Canon's statistical meta-analysis of 48 "top games" lists published between 1995 and 2017. The list aggregator site Playthatgame currently ranks Space Invaders as the 57th top game of all-time, game of the year, & game of the 1970s.</p>
+        </div>
+  </div>
+  </div>
+      </section>
+      <section class="d-md-none">
+        <div class="container h-100">
+          <div class="row h-100 align-items-center">
+
+            <div class="col-md-6">
+
+              <p style="margin:0">
+              Technology journalist Jason Whittaker credited the game with ending the video game crash of 1977, caused by Pong clones flooding the market, and beginning the golden age of video arcade games (1978–1980s). According to The Observer, home console versions of Space Invaders were popular and encouraged users to learn to program; many became industry leaders. 1UP.com stated that Space Invaders showed that video games could compete against the major entertainment media at the time: movies, music, and television. IGN attributed the launch of the "arcade phenomenon" in North America in part to Space Invaders. Electronic Games credited the game's success as the impetus behind video gaming becoming a rapidly growing hobby, and as "the single most popular coin-operated attraction of all time." Game Informer considered it, along with Pac-Man, one of the most popular arcade games; it tapped into popular culture and generated excitement during the golden age of arcades. Space Invaders was inducted into the World Video Game Hall of Fame in 2016.
+            </p>
+              <p>
+              In 1996, Next Generation magazine put Space Invaders at number 97 on their list of the "Top 100 Games of All Time", saying that it "provides an elegance and simplicity not found in later games like Phoenix [1980]." IGN listed it as one of the "Top 10 Most Influential Games" in 2007, citing it as a source of inspiration to video game designers and the impact it had on the shooting genre. The Times ranked it No. 1 on its list of "The ten most influential video games ever" in 2007. 1UP ranked it at No. 3 on its list of "The 60 Most Influential Games of All Time," stating that, in contrast to earlier arcade games which "were attempts to simulate already-existing things," Space Invaders was "the first video game as a video game, instead of merely a playable electronic representation of something else." In 2008, Guinness World Records listed it as the top-rated arcade game in technical, creative, and cultural impact. Entertainment Weekly named Space Invaders one of the top ten games for the Atari 2600 home console in 2013. In 2018, it was ranked 87th in Video Game Canon's statistical meta-analysis of 48 "top games" lists published between 1995 and 2017. The list aggregator site Playthatgame currently ranks Space Invaders as the 57th top game of all-time, game of the year, & game of the 1970s.</p>
+            </div>
+          </div>
+          </div>
+      </section>
+<section>
+  <div class="container h-100">
+    <div class="row h-100 align-items-center">
+
+      <div class="col-md-5">
+
+      <img src="https://i.ytimg.com/vi/slasm-aahGc/maxresdefault.jpg" class="img-fluid pt-5" alt="">
+      </div>
+      <div class="col-md-7">
+        <h4 class="d-flex justify-content-start">Ports to other platforms</h4>
+        <p class="d-flex justify-content-start"> Space Invaders has been remade on numerous platforms and spawned many sequels. Re-releases include ported and updated versions of the original arcade game. Ported versions generally feature different graphics and additional gameplay options—for example, moving defense bunkers, zigzag shots, invisible aliens, and two-player cooperative gameplay.</p> <p class="d-flex justify-content-start"> Ports on earlier systems like the Atari home consoles featured simplified graphics,[clarification needed] while later systems such as the Super Nintendo Entertainment System and PlayStation featured updated graphics. Later titles include several modes of gameplay and integrate new elements into the original design. For example, Space Invaders Extreme, released on the Nintendo DS and PlayStation Portable, integrated musical elements into the standard gameplay. A 2008 spin-off for WiiWare, Space Invaders Get Even, allows players to control the aliens instead of the laser cannon in a little bit of role reversal.
+        </p>
+
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="container h-100">
+
+
+  <div class="row h-100 align-items-center" >
+    <div class="col-md-5 d-md-none">
+      <img src="posters/poster(12).jpg" alt="" class="img-fluid pt-5" width="500">
+    </div>
+    <div class="col-md-7">
+      <p class="d-none d-md-block">In 1980, Bally-Midway released a pinball version of the game. However, few elements from the original game are included, and the aliens instead resemble the xenomorphs from the film Alien; Bally-Midway was later sued over the game's resemblance to the designs by H. R. Giger. Ports of the game have been met with mixed receptions; the Atari 2600 version was very successful, while the Nintendo Entertainment System version was poorly received.</p>
+
+<p>Taito has released several arcade sequels. The first was Space Invaders Part II in 1979; it featured color graphics, an attract mode, new gameplay elements, and added an intermission between gameplay. According to the Killer List of Video Games, this was the first video game to include an intermission. The game also allowed the player with the top score to sign their name on the high score table. This version was released in the United States as Deluxe Space Invaders (also known as Space Invaders Deluxe), but it featured a different graphical color scheme and a lunar-city background. Another arcade sequel, Space Invaders II, was released exclusively in the United States. It was in a cocktail-table format with very fast alien firing and a competitive two-player mode. During the summer of 1985, Return of the Invaders was released with updated color graphics and more complex movements and attack patterns for the aliens. Subsequent arcade sequels included Super Space Invaders '91, Space Invaders DX, and Space Invaders '95. Each game introduced minor gameplay additions to the original design. Like the original game, several of the arcade sequels have become collector's items, though some are considered rarer. In 2002, Taito released Space Raiders, a third-person shooter reminiscent of Space Invaders.
+</p>
+</div>
+<div class="col-md-5 d-none d-md-block">
+  <img src="posters/poster(12).jpg" alt="" class="img-fluid" width="500">
+</div>
+
+  </div>
+  </div>
+</section >
+
+<section class="d-md-none">
+<div class="container h-100">
+  <div class="row h-100 align-items-center">
+    <div class="col-md-8  d-flex justify-content-center">
+<img src="https://pinballandmore.com/wp/wp-content/uploads/2016/10/IMG_3992.jpg" alt="" class="img-fluid">
+    </div>
+    <div class="col-md-4">
+<p>In 1980, Bally-Midway released a pinball version of the game. However, few elements from the original game are included, and the aliens instead resemble the xenomorphs from the film Alien; Bally-Midway was later sued over the game's resemblance to the designs by H. R. Giger. Ports of the game have been met with mixed receptions; the Atari 2600 version was very successful, while the Nintendo Entertainment System version was poorly received.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+
+
+
+
+<section>
+  <div class="container h-100">
+    <div class="row h-100 align-items-center">
+      <div class="col-md-5 d-flex justify-content-center mt-5">
+<img src="https://atariage.com/store/images/products/large_900_7800_SpaceInvaders_detail_large.jpg" class="img-fluid" alt="">
+      </div>
+      <div class="col-md-7 ">
+
+
+  <p class="d-flex justify-content-start pt-2" style="margin:0;">The game and its related games have been included in video game compilation titles. Space Invaders Anniversary was released in 2003 for the PlayStation 2 and included nine Space Invader variants. A similar title for the PlayStation Portable, Space Invaders Pocket, was released in 2005. Space Invaders, Space Invaders Part II and Return of the Invaders are included in Taito Legends, a compilation of Taito's classic arcade games released in 2005 on the PlayStation 2, Xbox, and PC. Super Space Invaders '91, Space Invaders DX, and Space Invaders '95 were included in Taito Legends 2, a sequel compilation released in 2006. In April 2017, a redemption game by Raw Thrills, Space Invaders Frenzy, was released.</p>
+
+<p class="d-flex justify-content-start" style="margin:0;">A stand-alone version was released by Super Impulse as part of its Tiny Arcade series, along with the Namco games Pac-Man, Ms. Pac-Man, and Galaxian.</p>
+
+<p class="d-flex justify-content-start" style="margin:0;">A Space Invaders title for the Atari Jaguar was being worked on by Virtuality Entertainment, which would have featured support for the unreleased Jaguar VR peripheral; however, the project never entered full development beyond reaching pre-production stages, with the only remaining proof of its existence being a game design document.</p>
+</div>
+</div>
+</div>
+</section>
+
+
+
+  <!-- bootsrap carousel -->
+
+      <section style="background:black;">
+
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="parent d-flex justify-content-center align-items-center">
+                <img src="posters/poster(2).jpg" class="carouselimg" alt="">
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="parent d-flex justify-content-center">
+                <img src="posters/poster.jpg" class="carouselimg" alt="">
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="parent d-flex justify-content-center">
+                <img src="posters/poster(3).jpg" class="carouselimg" alt="">
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="parent d-flex justify-content-center">
+                <img src="posters/poster(4).jpg" class="carouselimg" alt="">
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="parent d-flex justify-content-center">
+                <img src="posters/poster(5).jpg " class="carouselimg" alt="">
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="parent d-flex justify-content-center">
+                <img src="posters/poster(6).jpg" class="carouselimg" alt="">
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="parent d-flex justify-content-center">
+                <img src="posters/poster(7).jpg" class="carouselimg" alt="">
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="parent d-flex justify-content-center">
+                <img src="posters/poster(8).jpg" class="carouselimg" alt="">
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="parent d-flex justify-content-center">
+                <img src="posters/poster(9).jpg" class="carouselimg" alt="">
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="parent d-flex justify-content-center">
+                <img src="posters/poster(10).jpg" class="carouselimg" alt="">
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="parent d-flex justify-content-center">
+                <img src="posters/poster(11).jpg" class="carouselimg" alt="">
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="parent d-flex justify-content-center">
+                <img src="posters/poster(12).jpg" class="carouselimg" alt="">
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="parent d-flex justify-content-center">
+                <img src="posters/poster(13).jpg" class="carouselimg" alt="">
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="parent d-flex justify-content-center">
+                <img src="posters/poster(14).jpg" class="carouselimg" alt="">
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="parent d-flex justify-content-center">
+                <img src="posters/poster(15).jpg" class="carouselimg" alt="">
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="parent d-flex justify-content-center">
+                <img src="posters/poster(16).jpg" class="carouselimg" alt="">
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="parent d-flex justify-content-center">
+                <img src="posters/poster(17).jpg" class="carouselimg" alt="">
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="parent d-flex justify-content-center">
+                <img src="posters/poster(18).jpg" class="carouselimg" alt="">
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="parent d-flex justify-content-center">
+                <img src="posters/poster(19).jpg" class="carouselimg" alt="">
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="parent d-flex justify-content-center">
+                <img src="posters/poster(20).jpg" class="carouselimg" alt="">
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="parent d-flex justify-content-center">
+                <img src="posters/poster(21).jpg" class="carouselimg" alt="">
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="parent d-flex justify-content-center">
+                <img src="posters/poster.png" class="carouselimg" alt="">
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="parent d-flex justify-content-center">
+                <img src="posters/poster2.png" class="carouselimg" alt="">
+              </div>
+            </div>
+
+          </div>
+          <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+  </body>
+
+  </html>

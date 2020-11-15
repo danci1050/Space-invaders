@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Space Invaders</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="icon" type="image/png" href="favicon.png"/>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous">
+  </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+    <script>
+    $(window).on("load",function(){
+       $(".loader-wrapper").fadeOut("slow");
+    });
+
+
+    $(document).ready(function() {
+      var height = $(window).height();
+
+      document.addEventListener('scroll', function (event) {
+        var scroll = $('main').scrollTop();
+
+        if (scroll >= height) {
+
+            $(".navbar").removeClass("bg-spacinvaer-navbar-semitransparent");
+            $(".navbar").addClass("bg-spacinvaders-navber-blue");
+
+
+        } else {
+          console.log(scroll);
+          $(".navbar").removeClass("bg-spacinvaders-navber-blue");
+          $(".navbar").addClass("bg-spacinvaer-navbar-semitransparent");
+        }
+        if (event.target.id === 'idOfUl') { // or any other filtering condition
+            console.log('scrolling', event.target);
+
+        }
+    }, true /*Capture event*/);
+
+    });
+    </script>
+  </head>
+
+
+
+
+  <body>
+
+
+    <div class="loader-wrapper">
+      <img class="loader-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Space_invaders_logo.svg/1024px-Space_invaders_logo.svg.png" alt="">
+    </div>
+
+
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark ">
+      <a class="navbar-brand invaders-font text-white" href="#">'</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item">
+            <a class="nav-link spacefont" href="Gameplay.html">Gameplay </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link spacefont" href="development.html">Development</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link spacefont" href="SalesAndPorts.html">Sales and Ports</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link spacefont" href="legacy.html">Legacy</a>
+          </li>
+
+        </ul>
+
+        <button class="btn btn-outline-light spacefont" type="submit">Play the game</button>
+
+      </div>
+    </nav>
+
+    <main class="scroll-container">
+      <section class="home">
+        <div class="container h-100">
+      <div class="row h-100 justify-content-center align-items-center">
+        <img class="img-fluid" src="wikilogo.png" alt="">
+      </div>
+      </div>
+</section>
+
+
+
+<section>
+
+
+
+  <div class="container h-100  retro_gaming-font text-white flex-container" style="font-size:1vh;">
+<div class="inner-element">
+
+  <div class="row">
+    <div class="col-12">
+      <h4>Quick Overview</h4>
+    </div>
+  </div>
+<div class="row border">
+
+  <div class="col-12">
+    Space Invaders
+  </div>
+</div>
+<div class="row border">
+  <div class="col-6">
+  Developer(s)
+  </div>
+  <div class="col-6">
+    Taito
+  </div>
+</div>
+<div class="row border">
+  <div class="col-6 align-self-center">
+Publisher(s)
+  </div>
+  <div class="col-6 align-self-center">
+    <p style="margin:0">
+JP: Taito<br>
+WW: Midway<br>
+AU: Leisure & Allied Industries<br>
+Atari, Inc. (home)</p>
+  </div>
+</div>
+<div class="row border">
+  <div class="col-6">
+Designer(s)
+  </div>
+  <div class="col-6">
+    Tomohiro Nishikado
+  </div>
+</div>
+<div class="row border">
+  <div class="col-6">
+    Series
+  </div>
+  <div class="col-6">
+    	Space Invaders
+  </div>
+</div>
+<div class="row border">
+  <div class="col-6 align-self-center">
+    Platform(s)
+  </div>
+  <div class="col-6 align-self-center">
+    <p style="margin:0">
+Arcade<br>
+Atari 2600<br>
+Atari 5200<br>
+Atari 8-bit
+MSX</p>
+  </div>
+</div>
+<div class="row border">
+  <div class="col-6 align-self-center">
+    Release
+  </div>
+
+<div class="col-6 align-self-center">
+  <p style="margin:0">
+Arcade
+JP: June 1978<br>
+NA: July 1978<br>
+Atari 2600<br>
+NA: March 1980
+  </p>
+</div>
+</div>
+
+<div class="row border">
+  <div class="col-6">
+    Genre(s)
+  </div>
+  <div class="col-6">
+Fixed shooter
+  </div>
+</div>
+<div class="row border">
+  <div class="col-6">
+    Mode(s)
+  </div>
+  <div class="col-6">
+    Single-player, 2 players alternating
+  </div>
+</div>
+<div class="row border">
+  <div class="col-6">
+    Cabinet
+  </div>
+  <div class="col-6">
+Upright, cocktail
+  </div>
+</div>
+<div class="row border">
+  <div class="col-6">
+Arcade system
+  </div>
+  <div class="col-6">
+Taito 8080
+  </div>
+</div>
+<div class="row border">
+<div class="col-6">
+CPU
+</div>
+<div class="col-6">
+  8080 @ 2 MHz
+</div>
+</div>
+<div class="row border">
+  <div class="col-6">
+Sound
+  </div>
+  <div class="col-6">
+SN76477 @ 1.9968 MHz
+  </div>
+</div>
+<div class="row border">
+  <div class="col-6 align-self-center">
+Display
+  </div>
+  <div class="col-6 ">
+    <p style="margin:0">
+monochrome raster<br>
+vertical orientation<br>
+224×256 resolution<br>
+</p>
+  </div>
+</div>
+</div></div>
+
+</section>
+
+<section  style="background:black;">
+
+
+
+<div class="container h-100  container-fluid flex-container">
+
+
+
+
+
+      <div class="row w-100 inner-element">
+          <div class="col-md-5">
+              <div class="well d-flex justify-content-center">
+                  <img src="https://i.guim.co.uk/img/media/1d8a665f3a7b8ec6335a9b7948438e5a3b442cb3/0_0_850_1202/master/850.jpg?width=700&quality=85&auto=format&fit=max&s=478cfcede76a8313dae8bc94671e45f4" class="img-fluid d-none d-md-block" alt="">
+              </div>
+          </div>
+          <div class="col-md-7">
+              <div class="row md-5" >
+                  <div class="col-md-12 " >
+                      <div class="well d-flex justify-content-center">
+                        <img src="https://www.comingsoon.net/assets/uploads/2019/07/Space.jpg" alt="" class="img-fluid pl-5">
+                      </div>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-12  text-white  pl-5">
+                      <div class="well"><p style="text-align: justify;">Space Invaders[a] is a 1978 arcade game created by Tomohiro Nishikado. It was manufactured and sold by Taito in Japan, and licensed in the United States by the Midway division of Bally. Within the shooter genre, Space Invaders was the first fixed shooter and set the template for the shoot 'em up genre. The goal is to defeat wave after wave of descending aliens with a horizontally moving laser to earn as many points as possible.</p></div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+    </section>
+
+
+      <section style="background:black; overflow:hidden;">
+        <div class="container h-100">
+      <div class="row h-100 align-items-center">
+        <div class="col-md-7 d-flex justify-content-center" >
+
+<img src="https://i.guim.co.uk/img/media/46447aacb9625cf90e7fe1b71d178d4f4fe8b99c/0_0_2477_3508/master/2477.jpg?width=1920&quality=85&auto=format&fit=max&s=d1e72822d4e0fefc473a5dac7e082b48" class="img-fluid " alt="" >
+
+      </div>
+      <div class="col-md-5">
+        <p style="text-align: justify;">
+            Space Invaders was an immediate commercial success; by 1982, it had grossed $3.8 billion, with a net profit of $450 million, making it the best-selling video game and highest-grossing "entertainment product" at the time. Adjusted for inflation, the many versions of the game are estimated to have grossed over $13 billion in total revenue as of 2016, making it the highest-grossing video game of all time.Space Invaders is considered one of the most influential video games of all time. It helped expand the video game industry from a novelty to a global industry, and ushered in the golden age of arcade video games.</p>
+            <p class="d-none d-md-block" style="text-align: justify;"> It was the inspiration for numerous video games and game designers across different genres, and has been ported and re-released in various forms. The 1980 Atari VCS version quadrupled sales of the VCS, thereby becoming the first killer app for video game consoles. More broadly, the pixelated enemy alien has become a pop culture icon, often representing video games as a whole.</p>
+              <p class="d-none d-md-block" style="text-align: justify;">Designer Nishikado drew inspiration from games like 1976's ball-bouncing game Breakout and the 1975 shooter game Gun Fight, as well as science fiction narratives such as The War of the Worlds, Space Battleship Yamato, and Star Wars. To complete development of the game, he had to design custom hardware and development tools.</p>
+
+
+      </div>
+      </div>
+      </div>
+
+
+
+
+
+      </section>
+<section class="d-md-none">
+  <div class="container h-100">
+  <div class="row  h-100 align-items-center">
+    <div class="col-md-5 d-flex justify-content-center" >
+    <img src="https://i.pinimg.com/originals/52/e2/b9/52e2b910f617def2e776f70f49bbf187.png" class="img-fluid" alt="" >
+    </div>
+  <div class="col-md-7">
+
+
+  <p style="text-align: justify;"> It was the inspiration for numerous video games and game designers across different genres, and has been ported and re-released in various forms. The 1980 Atari VCS version quadrupled sales of the VCS, thereby becoming the first killer app for video game consoles. More broadly, the pixelated enemy alien has become a pop culture icon, often representing video games as a whole.</p>
+    <p style="text-align: justify;">Designer Nishikado drew inspiration from games like 1976's ball-bouncing game Breakout and the 1975 shooter game Gun Fight, as well as science fiction narratives such as The War of the Worlds, Space Battleship Yamato, and Star Wars. To complete development of the game, he had to design custom hardware and development tools.</p>
+
+
+</div>
+    </div>
+    </div>
+</section>
+
+
+  </main>
+  </body>
+</html>

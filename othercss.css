@@ -1,0 +1,208 @@
+
+/*Imported google font*/
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+.navtext{
+  margin-left: 0.5vw;
+}
+/*image font for the nav*/
+
+
+
+/*Seting the background for navbar to transparent*/
+.navbar{
+   background-color: rgba(65, 80, 92, 0.7);
+}
+
+/*added color so that the toggle button is visible*/
+.navbtn{
+background-color: #00ff00;
+height: 20px;
+}
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 0px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* importing fonts */
+@font-face {
+    font-family: 'invaders';
+    src: url('fonts/invaders-6ry1-webfont.woff2') format('woff2'),
+         url('fonts/invaders-6ry1-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'Space Invaders';
+    src: url('fonts/Space-Invaders.woff2') format('woff2'),
+        url('fonts/Space-Invaders.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'retro_gamingregular';
+    src: url('fonts/retro_gaming-webfont.woff2') format('woff2'),
+         url('fonts/retro_gaming-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+/* creating classes for the inported fonts */
+.retro_gaming-font{
+  font-family: retro_gamingregular;
+}
+.spacefont{
+  font-family: Space Invaders;
+}
+
+.space-invaders-hading{
+  font-family: invaders;
+  font-size: 2500%;
+  z-index: 4;
+}
+.invaders-font{
+  font-family: invaders;
+
+}
+
+
+
+/* setting up screen snapping */
+
+body {
+margin: 0;
+overflow: visible;
+}
+
+/* All the snapping stuff */
+.scroll-container {
+height: 100vh;
+width: 100vw;
+overflow-y: scroll;
+scroll-snap-type: y mandatory;
+}
+
+section {
+height: 100vh;
+scroll-snap-align: start;
+overflow-y: visible;
+background: black;
+}
+
+
+p{
+  font-size: 1.4vh;
+  font-family: retro_gamingregular;
+  color: white;
+  text-align:justify;
+}
+ul{
+
+    font-size: 1.4vh;
+    font-family: retro_gamingregular;
+    color: white;
+    text-align:justify;}
+
+/* styleing h4 */
+
+h4{
+    font-family: Space Invaders;
+    color: #10A415;
+}
+
+/* styleing h2 */
+h2{
+    font-family: Space Invaders;
+    color: #10A415;
+    padding-top: 10vh;
+    padding-bottom: 3vh;
+}
+
+/* centering elements on page */
+.flex-container{
+  position: relative;
+}
+
+.inner-element{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%,-50%);
+  transform: translate3d(-50%,-50%,0);
+
+
+}
+/* background for sales and ports */
+.salesandports{
+  position: relative;
+  background-image: url('spaceinvaders.png');
+  background-size: cover;
+  background-position: 0 0;
+  background-repeat: repeat-x;
+  -webkit-animation: moving 5s linear infinite;
+  animation: moving 2500s linear infinite;
+}
+@keyframes moving {
+  from{
+    background-position: 0 0;
+  }
+  to{
+    background-position: 5000vw 0;
+  }
+}
+.blackoverlay{
+  background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* stying font awsome */
+.fa-star{
+  color:yellow;
+}
+
+.maxheight{
+  max-height: 80vh;
+}
+/* styling bootsrap carousel */
+#myCarousel {
+  height: 100%;
+  width: 100%;
+}
+
+.carousel-indicators {
+  margin-bottom: 8px;
+}
+
+.carousel-indicators>li {
+  width: 10px;c
+  height: 10px;
+  border-radius: 100%;
+}
+
+.carousel-inner {
+  height: 100%;
+  background-color: black;
+}
+
+.carousel-item {
+  text-align: center;
+}
+
+.parent {
+  height: 100vh;
+}
+
+.carousel-item img {
+  display: block;
+  margin: auto;
+}
